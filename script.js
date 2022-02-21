@@ -1,32 +1,20 @@
 "use strict";
-// function declaration
-// let num = 20;
-// function showFirstMessage(ext) {
-//    console.log(ext);
-//    return(console.log(num));
-// }
-// showFirstMessage('hello world');
-// console.log(num);
-// function calc(a, b) {
-//    return (a + b);
-//    console.log('lox')
-// }
-// console.log(calc(5, 3));
-// console.log(calc(2, 81));
-// const anotherNum = ret();
-// console.log(anotherNum);
-// function ret() {
-//    let num = 50;
-//    return num;
-// }
-// function expression
-// const logger = function () {
-//    console.log('hello');
-// };
-// logger();
-//СОВРЕМЕННЫЙ ФОРМАТ
-//стрелочная функция
-const calc = (a, b) => { return (a + b) };
-console.log(calc(5, 6));
-   
+const str = 'test';
+const arr = [1, 2, 3];
+// console.log(str[2] = 'd');
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase);
+// console.log(str);
+
+// const fruit = 'Some fruit';
+// console.log(fruit.indexOf('fruit'));
+
+// const logg = 'hello world';
+// console.log(logg.slice(6,11));
+// console.log(logg.substring(11, 6));
+// console.log(logg.substr(6, 5));
+const num = 12.4;
+console.log(Math.round(num));
+const test = '12,2px';
+console.log(parseInt());
 
