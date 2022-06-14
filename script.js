@@ -1,27 +1,11 @@
 "use strict";
 
-// function first() {
-//    //Do something
-//    setTimeout(function(){
-//       console.log(1);
-//    },500);
-// }
-
-// function second(){
-//    console.log(2);
-// }
-
-function learnJS(lang, callback) {
-   console.log(`Я учу ${lang}`);
-   callback();
+function getTimeFromMinutes(time) {
+   if (isNaN(time) || !Number.isInteger(time) || time < 0) {
+      return (`Проверьте правильное ли число`);
+   }
+   let minutes = time % 60;
+   let hours = (time - minutes)/60;
+   return(`${hours} часов и ${minutes} минут`);
 }
-// learnJS('JavaScript', function () {
-//    console.log('Я прошёл этот урок');
-// });
-learnJS('JavaScript', done);//ВНИМАНИЕ!!! done БЕЗ КРУГЛЫХ СКОБОК
-function done() {
-   console.log('я прошёл этот урок');
-} 
-
-// first();
-// second();
+console.log(getTimeFromMinutes(150));
