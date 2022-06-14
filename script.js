@@ -1,31 +1,38 @@
 "use strict";
 
-function calculateVolumeAndArea(a) {
-   if (isNaN(a) || a < 0||!Number.isInteger (a))
-      return('При вычислении произошла ошибка');
-   else {
-      let area = a * a * 6;
-      let volume = a * a * a;
-      return(`Объём куба: ${volume}, Площадь куба: ${area}`);
+
+function getTimeFromMinutes(time) {
+   if (isNaN(time) || !Number.isInteger(time) || time < 0) {
+      return (`Проверьте правильное ли число`);
    }
-}
-console.log(calculateVolumeAndArea(5));
-function getCoupeNumber(a) {
-   if (isNaN(a) || Number.isInteger(a)== false || a < 0) {
-      return('Ошибка.Проверьте правильность введенного номера места');
-   }
-   if (a == 0||a>36) {
-      return('Таких мест в вагоне не существует');
-   }
-   for (let i = 4; i <= 36; i += 4)
+   let minutes = time % 60;
+   let hours = (time - minutes) / 60;
+   let h
+   switch (hours)
    {
-      if (a <= i) {
-         let b = i / 4;
-         return(b);
+      case 1: h = '';
          break;
-      }
-      }
+      case 2:
+      case 3:
+      case 4: h = 'а';
+         break;
+      default: h = 'ов';
+         break;
+   }
+   let m;
+   switch (minutes)
+   {
+      case 1: m = 'а';
+         break;
+      case 2: 
+      case 3:
+      case 4: m = 'ы';
+         break;
+      default: m = '';
+         break;
+   }
+   return(`${hours} час${h} и ${minutes} минут${m}`);
 }
-console.log(getCoupeNumber(5));
+console.log(getTimeFromMinutes(10000));
 
 
