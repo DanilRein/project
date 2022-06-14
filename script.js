@@ -1,20 +1,20 @@
 "use strict";
 
-
-function findMaxNumber(a, b, c, d) {
-   let max = a;
-   const M = [a, b, c, d];
-   if (M.length<4||typeof(a)!='number'||typeof(b)!='number'||typeof(c)!='number'||typeof(d)!='number')
-      return 0;
-   for (let i = 1; i < 4; i++)
-   {
-      if (max < M[i]) {
-         max = M[i];
-      }
+function fib(a) {
+   let result = '0 1';
+   let M = [0, 1];
+   if (isNaN(a) || a < 0 || a ==0) {
+      return '';
    }
-   return max;
-}
-console.log(findMaxNumber(1, 5, '6', '11'));
+   if (a == 1)
+      return 0;
+   for (let i = 2; i < a; i++){
+      M[i] = M[i - 1] + M[i - 2];
+      result +=` ${M[i]}`;
 
+   }
+   return result;
+}
+console.log(fib(3));
 
 
