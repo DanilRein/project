@@ -1,38 +1,20 @@
 "use strict";
 
 
-function getTimeFromMinutes(time) {
-   if (isNaN(time) || !Number.isInteger(time) || time < 0) {
-      return (`Проверьте правильное ли число`);
-   }
-   let minutes = time % 60;
-   let hours = (time - minutes) / 60;
-   let h
-   switch (hours)
+function findMaxNumber(a, b, c, d) {
+   let max = a;
+   const M = [a, b, c, d];
+   if (M.length<4||typeof(a)!='number'||typeof(b)!='number'||typeof(c)!='number'||typeof(d)!='number')
+      return 0;
+   for (let i = 1; i < 4; i++)
    {
-      case 1: h = '';
-         break;
-      case 2:
-      case 3:
-      case 4: h = 'а';
-         break;
-      default: h = 'ов';
-         break;
+      if (max < M[i]) {
+         max = M[i];
+      }
    }
-   let m;
-   switch (minutes)
-   {
-      case 1: m = 'а';
-         break;
-      case 2: 
-      case 3:
-      case 4: m = 'ы';
-         break;
-      default: m = '';
-         break;
-   }
-   return(`${hours} час${h} и ${minutes} минут${m}`);
+   return max;
 }
-console.log(getTimeFromMinutes(10000));
+console.log(findMaxNumber(1, 5, '6', '11'));
+
 
 
