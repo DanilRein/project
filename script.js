@@ -1,20 +1,42 @@
 "use strict";
 
-function fib(a) {
-   let result = '0 1';
-   let M = [0, 1];
-   if (isNaN(a) || a < 0 || a === 0||!Number.isInteger(a)) {
-      return '';
+const options = {
+   name: 'test',
+   width: 1024,
+   height: 1024,
+   colors: {
+      border: 'black',
+      bg:'red'
+   },
+   makeTest: function(){
+      console.log('test')
    }
-   if (a == 1)
-      return `0`;
-   for (let i = 2; i < a; i++){
-      M[i] = M[i - 1] + M[i - 2];
-      result +=` ${M[i]}`;
+};
+options.makeTest();
 
-   }
-   return result;
-}
-console.log(fib(3));
+const { border, bg } = options.colors;
+console.log(bg);
 
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options.name);
+
+// let counter = 0;
+
+// for (let key in options) {
+//    if (typeof (options[key]) == 'object') {
+//       for (let i in options[key]) {
+//          console.log(`Свойство ${i} имеет зачение ${options[key][i]}`);
+//          counter++;
+//       }
+//    }
+//    else {
+//       console.log(`Свойство ${key} имеет зачение ${options[key]}`);
+//       counter++;
+//    }
+// }
+// console.log(`Количество свойств равно: ${counter}`);
+// console.log(Object.keys(options));
 
