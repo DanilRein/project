@@ -1,42 +1,31 @@
 "use strict";
 
-const options = {
-   name: 'test',
-   width: 1024,
-   height: 1024,
-   colors: {
-      border: 'black',
-      bg:'red'
-   },
-   makeTest: function(){
-      console.log('test')
-   }
-};
-options.makeTest();
+const arr = [14312423, 83276, 32, 6234, 8];
+arr.sort(compareNum);
+console.log(arr);
 
-const { border, bg } = options.colors;
-console.log(bg);
+function compareNum(a, b) {
+   return a - b;
+} // запоминаем конструкцию, она для сортировки чисел
 
-// console.log(options.name);
+// arr.pop(); // удаление в конце
 
-// delete options.name;
+// arr.push('novoe');  //добавление в конце
 
-// console.log(options.name);
+// console.log(arr);
 
-// let counter = 0;
-
-// for (let key in options) {
-//    if (typeof (options[key]) == 'object') {
-//       for (let i in options[key]) {
-//          console.log(`Свойство ${i} имеет зачение ${options[key][i]}`);
-//          counter++;
-//       }
-//    }
-//    else {
-//       console.log(`Свойство ${key} имеет зачение ${options[key]}`);
-//       counter++;
-//    }
+// for (let i = 0; i<arr.length; i++){
+//    console.log(arr[i]);
 // }
-// console.log(`Количество свойств равно: ${counter}`);
-// console.log(Object.keys(options));
+// for (let value of arr) {
+//    console.log(value);
+// }
 
+// arr[99] = 0;
+
+// console.log(arr.length);
+// console.log(arr);
+// arr.forEach(function (item, i, arr) { //Ф-я для каждого элемента массива
+//    console.log(`номер по порядку: ${i}, ${item} -  внутри массива,${arr} - сам массив`);
+// });
+//  
