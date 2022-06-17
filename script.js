@@ -1,37 +1,30 @@
 "use strict";
 
-const someString = 'This is some strange string';
+let str = 'some';
+let strObj = new String(str);
 
-function reverse(str) {
-   if (typeof (str) != 'string')
-      return 'Ошибка!';
-   const Arr = str.split('').reverse().join(''); //самый оптимальный вариант
-   // let Arr1 = [],
-   //    Arr2 = [],
-   //    Fin = [];
-   // for (let key in Arr) {
-   //    Arr1 = Arr[key].split(''); 
-   //    Arr2 = Arr1.reverse();
-   //    Fin = [...Fin, ...Arr2];
-   // }
-   // const Fin1 = Fin.join('');
-   // return Fin1;
-   return Arr;
-}
-console.log(reverse(someString));
+// console.log(typeof (str));
+// console.log(typeof (strObj));
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// console.dir([1, 2, 3]);
 
-function availableCurr(arr, missingCurr) {
-   if (arr.length === 0)
-      return 'Нет доступных валют';
-   let result = `Доступные валюты:\n`;
-   for (let key in arr) {
-      if (arr[key] == missingCurr)
-         continue;
-      result += `${arr[key]}\n`;
+const soldier = {
+   health: 400,
+   armor: 100,
+   sayHello: function () {
+      console.log('Hello');
    }
-   return result;
-}
-console.log(availableCurr(additionalCurrencies,'CNY'));
+};
+
+// const john = {
+//    health: 100
+// };
+//Дальше устаревший фомат
+// john.__proto__ = soldier;
+// console.log(john.armor);
+//Дальше новые форматы
+// Object.setPrototypeOf(john, soldier)
+
+const john = Object.create(soldier);
+john.sayHello();
+// console.log(john);
