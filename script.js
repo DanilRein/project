@@ -1,21 +1,45 @@
 "use strict";
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// let number = 5; debugger
 
-function sortStudentsByGroups(arr) {
-   arr.sort();
-   const a = [], b = [], c = [], rest = [];
+// function logNumber() {
+// //   let number = 4; debugger
+//    console.log(number); debugger
+// }
 
-   for (let i=0; i < arr.length; i++){
-      if (i < 3) {
-         a.push(arr[i]);
-      } else if (i < 6) {
-         b.push(arr[i]);
-      } else if (i < 9) {
-         c.push(arr[i]);
-      } else if (i >= 9)
-         rest.push(arr[i]);
+// number = 6;
+
+// logNumber(); debugger
+
+// number = 8;
+
+// logNumber(); debugger
+
+function createCounter() {debugger
+   let counter = 0;
+   const myFunction = function () {debugger
+      counter += 1;debugger
+      return counter;debugger
    }
-   return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+
+   return myFunction;
 }
-console.log(sortStudentsByGroups(students));
+debugger
+const increment = createCounter();debugger
+const c1 = increment();debugger
+const c2 = increment();debugger
+const c3 = increment();debugger
+
+console.log(c1, c2, c3);
+
+// {
+//    let msg = 'Hello';
+// }
+// console.log(msg);
+
+for (let i = 0; i < 9; i++){
+   for (let j = 0; j < 9; j++){
+      let num = 3;
+   }
+   cpnsole.log(num)
+}
