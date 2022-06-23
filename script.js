@@ -1,45 +1,56 @@
 "use strict";
 
-// let number = 5; debugger
+const restorantData = {
+   menu: [
+       {
+           name: 'Salad Caesar',
+           price: '14$'
+       },
+       {
+           name: 'Pizza Diavola',
+           price: '9$'
+       },
+       {
+           name: 'Beefsteak',
+           price: '17$'
+       },
+       {
+           name: 'Napoleon',
+           price: '7$'
+       }
+   ],
+   waitors: [
+       {name: 'Alice', age: 22}, {name: 'John', age: 24}
+   ],
+   averageLunchPrice: '20$',
+   openNow: true
+};
 
-// function logNumber() {
-// //   let number = 4; debugger
-//    console.log(number); debugger
-// }
+function isOpen(prop) {
+   let answer = '';
+   prop ? answer = 'Открыто' : answer = 'Закрыто';
 
-// number = 6;
-
-// logNumber(); debugger
-
-// number = 8;
-
-// logNumber(); debugger
-
-function createCounter() {debugger
-   let counter = 0;
-   const myFunction = function () {debugger
-      counter += 1;debugger
-      return counter;debugger
-   }
-
-   return myFunction;
+   return answer;
 }
-debugger
-const increment = createCounter();debugger
-const c1 = increment();debugger
-const c2 = increment();debugger
-const c3 = increment();debugger
 
-console.log(c1, c2, c3);
+console.log(isOpen(restorantData.openNow));
 
-// {
-//    let msg = 'Hello';
-// }
-// console.log(msg);
-
-for (let i = 0; i < 9; i++){
-   for (let j = 0; j < 9; j++){
-      let num = 3;
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+   if (+fDish.price.slice(0, -1) + (sDish.price.slice(0,-1)) < average.slice(0,-1)) {
+       return 'Цена ниже средней';
+   } else {
+       return 'Цена выше средней';
    }
-   cpnsole.log(num)
 }
+
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+   const copy = Object.assign({}, data);
+
+   copy.waitors = [{name: 'Mike', age: 32}];
+   return copy.waitors[0];
+}
+
+transferWaitors(restorantData);
