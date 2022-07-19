@@ -1,21 +1,28 @@
-"use strict";
+const box = document.getElementById('box'),
+   btns = document.getElementsByTagName('button'),
+   circles = document.getElementsByClassName('circle'),
+   hearts = document.querySelectorAll('.heart'),
+   oneHeart = document.querySelector('.heart');
+// console.dir(box);
+box.style.backgroundColor = 'blue';
+box.style.width = '500px';
 
-const box = document.getElementById('box'); //поиск по ID
+box.style.cssText = `background-color: blue; width: 500px`;
 
-console.log(box);
+btns[1].style.borderRadius = '100%';
+circles[0].style.backgroundColor = 'red';
 
-// const btns = document.getElementsByTagName('button')[1]; //поиск по тегу(создаётся псевдомассив), а потом[нужный нам номер элемента]
+// for (let i = 0; i < hearts.length; i++){
+//    hearts[i].style.backgroundColor = 'blue';
+// }
 
-// console.log(btns);//можно [ ] написать сюда
-// оставим одну кнопку
-const btns = document.getElementsByTagName('button');
+hearts.forEach(item => {
+   item.style.backgroundColor = 'blue';
+});
 
-console.log(btns); // тоже будет создаваться коллекция(псевдомассив)
+const div = document.createElement('div');
+// const text = document.createTextNode('Тут был я');
 
+div.classList.add('black');
 
-const circles = document.getElementsByClassName('circle'); //по классу
-console.log(circles);
-
-const hearts = document.querySelectorAll('.heart');
-
-console.log(hearts);
+document.body.append(div);
